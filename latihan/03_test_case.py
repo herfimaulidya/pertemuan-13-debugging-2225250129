@@ -1,13 +1,28 @@
+def hitung_rata_rata(nilai):
+    if len(nilai) == 0:
+        return 0
+    return sum(nilai) / len(nilai)
 
-def status_lulus(nilai):
+
+def status(nilai):
     if nilai >= 60:
         return "Lulus"
     return "Tidak lulus"
 
 
-# Test case
-print("Test 1:", status_lulus(75))
-print("Test 2:", status_lulus(60))
-print("Test 3:", status_lulus(59))
-print("Test 4:", status_lulus(0))
-print("Test 5:", status_lulus(100))
+def nilai_tertinggi(nilai):
+    if len(nilai) == 0:
+        return None
+    tertinggi = nilai[0]
+    for x in nilai[1:]:
+        if x > tertinggi:
+            tertinggi = x
+    return tertinggi
+
+
+# TEST CASE
+print("T1 - Rata-rata:", hitung_rata_rata([80, 60, 90, 70]))
+print("T2 - Rata-rata:", hitung_rata_rata([100, 80]))
+print("T3 - Status 60:", status(60))
+print("T4 - Status 59:", status(59))
+print("T5 - Nilai tertinggi:", nilai_tertinggi([80, 60, 90, 70]))
